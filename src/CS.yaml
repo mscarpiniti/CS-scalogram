@@ -1,0 +1,16 @@
+# Path settings
+data_folder: 'C:/GitHub/CS-scalogram/data/'
+save_folder: 'C:/GitHub/CS-scalogram/models/'
+result_folder: 'C:/GitHub/CS-scalogram/results/'
+
+
+# Resampling rate and image size
+f_res: 22050  # resample rate
+N_res: 224    # resize dimension
+
+
+# Hyperarameters of AlexNet
+LR: !!float 1e-4  # Learning rate
+N_b: 32     # Batch size
+N_e: 10     # Number of epochs
+model_name: 'AlexNet1'

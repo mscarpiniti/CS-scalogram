@@ -1,0 +1,1 @@
+Insert here the training scalograms and related labels, as two separate NPY files: "scalograms.npy" and "labels.npy".
