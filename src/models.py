@@ -19,7 +19,6 @@ def AlexNet1(LR=0.001):
     alex = keras.models.Sequential([
         keras.layers.Rescaling(scale=1./255, input_shape=(227,227,1)),
         keras.layers.Conv2D(filters=96, kernel_size=(11,11), strides=(4,4), activation='relu'),
-        # keras.layers.Conv2D(filters=96, kernel_size=(11,11), strides=(4,4), activation='relu', input_shape=(224,224,1)),
         keras.layers.BatchNormalization(),
         keras.layers.MaxPool2D(pool_size=(3,3), strides=(2,2)),
         keras.layers.Conv2D(filters=256, kernel_size=(5,5), strides=(1,1), activation='relu', padding="same"),
