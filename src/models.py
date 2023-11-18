@@ -36,7 +36,6 @@ def AlexNet1(LR=0.001):
         keras.layers.Dropout(0.5),
         keras.layers.Dense(4096, activation='relu'),
         keras.layers.Dropout(0.5),
-        #keras.layers.Dense(1000, activation='softmax')
         keras.layers.Dense(5, activation='softmax')
     ])
 
@@ -44,8 +43,6 @@ def AlexNet1(LR=0.001):
     # alex.summary()
 
     alex.compile(loss='categorical_crossentropy',
-                  # optimizer='nadam',
-                  # optimizer=tf.optimizers.Nadam(learning_rate=LR),
                   optimizer=keras.optimizers.Nadam(learning_rate=LR),
                   metrics=['accuracy'])
 
