@@ -34,7 +34,7 @@ def extract_spectrogram(x, hop_length=1, n_fft=2048):
 
 
 
-# Extract the STFT MFCC-gram
+# Extract the MFCC-gram
 def extract_MFCCgram(S, sr=22050, n_mfcc=128):
     # M = librosa.feature.mfcc(y=x, sr=sr)
     SM = librosa.feature.melspectrogram(S=S**2, sr=sr, n_mels=n_mfcc)
@@ -45,7 +45,7 @@ def extract_MFCCgram(S, sr=22050, n_mfcc=128):
 
 
 
-# Extract the STFT scalogram
+# Extract the CWT scalogram
 def extract_scalogram(x, fs=22050, wavelet='morlet'):
     W, scales = cwt(x, wavelet=wavelet, fs=fs)
     W = np.abs(W)
@@ -55,6 +55,7 @@ def extract_scalogram(x, fs=22050, wavelet='morlet'):
 
 
 
+# Scale matrix in range [0, 1]
 def scale(matrix):
     # Perform min-max scaling
     min_val = np.min(matrix)
