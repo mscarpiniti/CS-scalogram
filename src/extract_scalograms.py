@@ -70,7 +70,7 @@ for s in sets:
             W = ft.scale(W)
 
             # Transform as an integer image
-            W = np.array(255*W, dtype = 'uint8')
+            W = np.array(255*W, dtype='uint8')
 
             # Set label
             y = c
