@@ -38,7 +38,7 @@ result_folder = config['result_folder']
 sets = ['Training/', 'Testing/']
 
 
-# %% Load training set
+# %% Load training set -----------------------------------------------------
 training_folder = data_folder + sets[0]
 
 X = np.load(training_folder + 'scalograms.npy')
@@ -64,7 +64,7 @@ model_name = config['model_name']
 early_stop = EarlyStopping(monitor='val_loss', patience=2)
 
 
-# %% Train the selected model
+# %% Train the selected model -----------------------------------------------------
 history = net.fit(X, y_cat, batch_size=N_b, epochs=N_e, validation_split=0.1, shuffle=True, callbacks=[early_stop])
 
 
@@ -76,7 +76,7 @@ np.save(save_folder + model_name + '_history.npy', history.history)
 # history = np.load(save_folder + model_name + '_history.npy', allow_pickle='TRUE').item()
 
 
-# %% Plot loss curve
+# %% Plot loss curve -----------------------------------------------------
 ep = range(1, N_e+1)
 plt.figure()
 plt.plot(ep, history.history['loss'], linewidth=2, label='Training loss')
@@ -108,7 +108,7 @@ plt.grid()
 
 
 
-# %% Testing
+# %% Testing -----------------------------------------------------
 
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from sklearn.metrics import accuracy_score
