@@ -32,9 +32,10 @@ save_folder = config['save_folder']
 sets = ['Training/', 'Testing/']
 
 
-# Set resample rate and image size
+# Set resample rate, image size, and mother wavelet
 f_res = config['f_res']   # resample rate
 N_res = config['N_res']   # resize dimension
+Wavelet = config['Wavelet']  # mother wavelet
 
 
 # Main loop
@@ -61,7 +62,7 @@ for s in sets:
             x = librosa.resample(x, orig_sr=fs, target_sr=f_res)
 
             # Extract features
-            W = ft.extract_scalogram(x, wavelet='morlet')
+            W = ft.extract_scalogram(x, wavelet=Wavelet)
 
             # Resize features to 224x224 or 227x227
             W = cv2.resize(W, dsize=(N_res, N_res), interpolation=cv2.INTER_LINEAR)

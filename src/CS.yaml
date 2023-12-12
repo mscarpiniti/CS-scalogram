@@ -8,6 +8,9 @@ result_folder: 'C:/GitHub/CS-scalogram/results/'
 f_res: 22050  # resample rate
 N_res: 224    # resize dimension
 
+# Mother Wavelet family
+Wavelet: 'morlet'  # mother wavelet: 'morlet', 'gmw', 'bump'
+
 
 # Hyperarameters of AlexNet
 LR: !!float 1e-4  # Learning rate
