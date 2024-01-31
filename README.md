@@ -1,5 +1,5 @@
 # CS-scalogram
-Repository for the implementation of classfication of construction site equipment by using CNNs fed by scalograms.
+Repository for the implementation of classification of construction site equipment by using CNNs fed by scalograms.
 
 The proposed model is based on a TensorFlow implementation of a customized version of AlexNet. The work has been proposed in [1].
 
